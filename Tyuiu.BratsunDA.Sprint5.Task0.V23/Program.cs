@@ -40,6 +40,7 @@ namespace Tyuiu.BratsunDA.Sprint5.Task0.V23
             string res = ds.SaveToFileTextData(x);
             Console.WriteLine("Файл: " + res);
             Console.WriteLine("Создан!");
+            Console.WriteLine("Ответ = " + Math.Round((((1 + Math.Pow(x, 3)) / Math.Pow(x, 2))),3));
             Console.ReadKey();
         }
     }
