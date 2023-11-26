@@ -27,12 +27,26 @@ namespace Tyuiu.BratsunDA.Sprint5.Task7.V12.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    strLine = line.ToUpper();
+                    for (int i = 0; i < line.Length; i++)
+                    {
+                        char c = line[i];
+                        if (((c >= 'а') && (c <= 'я')))
+                        {
+                            strLine = strLine + Char.ToUpper(c);
+                        }
+                        else
+                        {
+                            strLine = strLine + line[i];
+                        }
+
+                    }
+
+                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+                    strLine = "";
                 }
-                File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                strLine = "";
+
+                return pathSaveFile;
             }
-            return pathSaveFile;
-        }
     }
 }
+    }
